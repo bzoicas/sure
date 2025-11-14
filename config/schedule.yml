@@ -18,3 +18,9 @@ run_security_health_checks:
   class: "SecurityHealthCheckJob"
   queue: "scheduled"
   description: "Runs security health checks to detect issues with security data"
+
+sync_accounts:
+  cron: "0 5 * * *" # 5:00 AM UTC daily
+  class: "SyncJob"
+  queue: "scheduled"
+  description: "Syncs all configured bank accounts (SimpleFIN, LunchFlow, Plaid)"
